@@ -89,14 +89,14 @@ public interface FxForwardRates
   public abstract PointSensitivityBuilder ratePointSensitivity(Currency baseCurrency, LocalDate referenceDate);
 
   /**
-   * Calculates the sensitivity of the forward rate to the spot FX rate.
+   * Calculates the sensitivity of the forward rate to the spot FX rate. // TODO: is this today's rate? YES
    * <p>
-   * This returns the sensitivity to the FX spot rate used to determine the forward rate.
+   * This returns the sensitivity to the FX today's rate used to determine the FX forward rate.
    * The sensitivity refers to the result of {@link #rate(Currency, LocalDate)}.
    * 
    * @param baseCurrency  the base currency that the rate should be expressed against
    * @param referenceDate  the date to find the sensitivity for
-   * @return the spot sensitivity of the rate
+   * @return the spot sensitivity of the rate // the sensitivity of the FX forward rate to today's FX rate
    * @throws RuntimeException if the value cannot be obtained
    */
   public abstract double rateFxSpotSensitivity(Currency baseCurrency, LocalDate referenceDate);
